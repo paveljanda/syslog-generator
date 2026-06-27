@@ -40,7 +40,7 @@ func (c *Config) duration() time.Duration {
 	return d
 }
 
-var syslogTimestampRe = regexp.MustCompile(`^\d+ (\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[^\s]+)\s`)
+var syslogTimestampRe = regexp.MustCompile(`^<\d+>\d+ (\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[^\s]+)\s`)
 
 func replaceTimestamp(msg string) string {
 	now := time.Now().UTC().Format(time.RFC3339Nano)
